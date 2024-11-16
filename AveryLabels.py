@@ -1,6 +1,6 @@
 from collections.abc import Iterator
 from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import A4
+from reportlab.lib.pagesizes import A4, letter
 from reportlab.lib.units import mm, cm
 
 # Usage:
@@ -26,7 +26,15 @@ labelInfo = {
     3044: ( 2, 11, (32, 10), (2,2), (1, 1), (66.5*mm, 120.5*mm)),
 
     # 189x 25.4mm x 10mm mini labels
-    4731: ( 7, 27, (25.4*mm, 10*mm), (2.5*mm, 0), (9*mm, 13.5*mm), A4),
+    #4731: ( 7, 27, (25.4*mm, 10*mm), (2.5*mm, 0), (9*mm, 13.5*mm), A4),
+
+    # for 4731REV.25 on HP LJ451 (manual feed)
+    4731: ( 7, 27, (25.4*mm, 10*mm), (2.9*mm, 0.1*mm), (7*mm, 11.5*mm), A4),
+
+    # for 4731REV.25 printer test on US letter paper on HP LJ451 (set labelsToPrint = 175)
+    #4731: ( 7, 25, (25.4*mm, 10*mm), (2.9*mm, 0.1*mm), (7*mm, 12.5*mm), letter),
+
+
     # 2.6 x 1 address labels
     5160: ( 3, 10, (187,  72), (11, 0), (14, 36), A4),
     5161: ( 2, 10, (288,  72), (0, 0), (18, 36), A4),
